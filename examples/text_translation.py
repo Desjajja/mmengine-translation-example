@@ -31,7 +31,6 @@ class MMT5ForTranslation(BaseModel):
             return output, label
 
 def post_process(preds, labels):
-    # print(f"维度: {labels.shape}{preds.shape}")
     preds = tokenizer.batch_decode(preds, skip_special_tokens=True)
     labels = torch.where(labels != -100, labels, tokenizer.pad_token_id)
     labels = tokenizer.batch_decode(labels, skip_special_tokens=True)
