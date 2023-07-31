@@ -1,0 +1,2 @@
+torchtext==0.9.1
+datasets==2.13.1
